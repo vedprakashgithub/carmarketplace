@@ -30,7 +30,7 @@ function SearchByOptions() {
         .where (make!=undefined&&eq(CarListing.make,make))
        
         const resp=Service.FormatResult();
-        console.log(resp)
+    
         setCarList(resp)
         }
     return (

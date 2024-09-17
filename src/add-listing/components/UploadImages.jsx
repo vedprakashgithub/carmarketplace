@@ -41,7 +41,7 @@ function UploadImages({triggerUploadImages, setLoader}) {
       };
   
       uploadBytes(storageRef, file, metaData).then((snapShot) => {
-        console.log('Uploaded File');
+        // console.log('Uploaded File');
       }).then(resp => {
         getDownloadURL(storageRef).then(async (downloadUrl) => {
           await db.insert(CarImages).values({

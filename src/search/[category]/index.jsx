@@ -22,7 +22,7 @@ function SearchByCategory() {
   // Fetch car listings based on category
   const GetCarList = async () => {
     try {
-      console.log(`Fetching car list for category: ${category}`);
+      //console.log(`Fetching car list for category: ${category}`);
 
       const result = await db
         .select()
@@ -30,14 +30,15 @@ function SearchByCategory() {
         .innerJoin(CarImages, eq(CarListing.id, CarImages.carListingId))
         .where(eq(CarListing.category, category));
 
-      console.log('Raw result from db:', result);
+      // console.log('Raw result from db:', result);
 
       const formattedResult = Service.FormatResult(result);
-      console.log('Formatted result:', formattedResult);
+      // console.log('Formatted result:', formattedResult);
 
       setCarList(formattedResult);
-    } catch (error) {
-      console.error('Error fetching car list:', error);
+    } 
+    catch (error) {
+      // console.error('Error fetching car list:', error);
     }
   };
 

@@ -12,9 +12,9 @@ function Search() {
   const [price, setPrice] = useState();
 
   // Debug state changes
-  console.log('Selected Car:', cars);
-  console.log('Selected Make:', make);
-  console.log('Selected Price:', price);
+  // console.log('Selected Car:', cars);
+  // console.log('Selected Make:', make);
+  // console.log('Selected Price:', price);
 
   return (
     <div className='p-1 md:p-4 bg-white rounded-md md:rounded-full flex-col md:flex-row md:flex gap-10 px-3 items-center w-full md:w-max'>

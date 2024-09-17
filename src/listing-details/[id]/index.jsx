@@ -6,11 +6,13 @@ import { db } from './../../../configs';
 import { CarImages, CarListing } from './../../../configs/schema';
 import { eq } from 'drizzle-orm';
 import Service from '@/Shared/Service';
+import MostSearchCar from '@/components/MostSearchCar';
+import Footer from '@/components/Footer';
 
 function ListingDetail() {
   const { id } = useParams();
   const [carDetail, setCarDetail]=useState();
-  console.log(id);
+  // console.log(id);
 
   useEffect(() => {
     GetCarDetail();
@@ -29,7 +31,7 @@ function ListingDetail() {
 
 
     } catch (error) {
-      console.error('Error fetching car details:', error);
+      // console.error('Error fetching car details:', error);
 
     }
   };
@@ -40,6 +42,10 @@ function ListingDetail() {
       <div className='p-10 md:px-20'>
         <DetailHeader carDetail={carDetail}/>
       </div>
+      <div>
+        <MostSearchCar/>
+      </div>
+      <Footer/>
     </div>
   );
 }

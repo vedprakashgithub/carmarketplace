@@ -23,7 +23,7 @@ const result=await db.select().from (CarListing)
 .orderBy(desc (CarListing.id))
 
 const resp=Service.FormateResult(result)
-console.log(resp);
+// console.log(resp);
 setCarList(resp)
 
 

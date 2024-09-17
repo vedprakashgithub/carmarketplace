@@ -34,7 +34,7 @@ function AddListing() {
         ...prevData,
         [name]:value
       }))
-      console.log(formData);
+      // console.log(formData);
   }
   
   const handleFeatureChange=(name,value)=>{
@@ -42,14 +42,14 @@ function AddListing() {
       ...prevData,
       [name]:value
     }))
-    console.log(featuresData);
+    // console.log(featuresData);
     
   }
 
   const onSubmit=async(e)=>{
     setLoader(true);
     e.preventDefault();
-    console.log(formData );
+    // console.log(formData );
 
    
   
@@ -62,12 +62,12 @@ function AddListing() {
       }).returning({id:CarListing.id}); 
       if (result)
       {
-        console.log("Data Saved");
+        // console.log("Data Saved");
         setTriggerUploadImages(result[0]?.id)
         setLoader(false);
       }
       }catch(e){
-      console.log("Error",e)
+      // console.log("Error",e)
       }
     
   }
