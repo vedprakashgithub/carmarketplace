@@ -11,17 +11,12 @@ function Search() {
   const [make, setMakes] = useState();
   const [price, setPrice] = useState();
 
-  // Debug state changes
-  // console.log('Selected Car:', cars);
-  // console.log('Selected Make:', make);
-  // console.log('Selected Price:', price);
-
   return (
-    <div className='p-1 md:p-4 bg-white rounded-md md:rounded-full flex-col md:flex-row md:flex gap-10 px-3 items-center w-full md:w-max'>
-      
+    <div className="p-3 md:p-4 bg-white rounded-md md:rounded-full flex flex-col md:flex-row gap-3 md:gap-10 items-center w-full md:w-max">
+
       {/* Select for Car Type */}
       <Select onValueChange={(value) => setCars(value)}>
-        <SelectTrigger className="outline-none md:border-none w-[180px] text-lg shadow-none">
+        <SelectTrigger className="outline-none border md:border-none w-full md:w-[180px] text-sm md:text-lg shadow-none">
           <SelectValue placeholder="Car" />
         </SelectTrigger>
         <SelectContent>
@@ -31,11 +26,12 @@ function Search() {
         </SelectContent>
       </Select>
 
-      <Separator orientation="vertical" />
+      {/* Separator only for larger screens */}
+      <Separator className="hidden md:block" orientation="vertical" />
 
       {/* Select for Car Makes */}
       <Select onValueChange={(value) => setMakes(value)}>
-        <SelectTrigger className="outline-none md:border-none w-[180px] text-lg shadow-none">
+        <SelectTrigger className="outline-none border md:border-none w-full md:w-[180px] text-sm md:text-lg shadow-none">
           <SelectValue placeholder="Car Makes" />
         </SelectTrigger>
         <SelectContent>
@@ -45,11 +41,12 @@ function Search() {
         </SelectContent>
       </Select>
 
-      <Separator orientation="vertical" />
+      {/* Separator only for larger screens */}
+      <Separator className="hidden md:block" orientation="vertical" />
 
       {/* Select for Price */}
       <Select onValueChange={(value) => setPrice(value)}>
-        <SelectTrigger className="outline-none md:border-none w-[180px] text-lg shadow-none">
+        <SelectTrigger className="outline-none border md:border-none w-full md:w-[180px] text-sm md:text-lg shadow-none">
           <SelectValue placeholder="Pricing" />
         </SelectTrigger>
         <SelectContent>
@@ -61,7 +58,7 @@ function Search() {
 
       {/* Search Button with Dynamic Link */}
       <Link to={`/search?cars=${cars}&make=${make}&price=${price}`}>
-        <CiSearch className='text-[50px] bg-primary rounded-full p-3 text-white hover:scale-105 transition-all cursor-pointer' />
+        <CiSearch className="text-[40px] md:text-[50px] bg-primary rounded-full p-2 md:p-3 text-white hover:scale-105 transition-all cursor-pointer" />
       </Link>
 
     </div>
